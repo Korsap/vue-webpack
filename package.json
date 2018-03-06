@@ -1,0 +1,13 @@
+{
+  "name": "vue-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Andrey Savchenko <korsap@bk.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "3"
+  }
+}
