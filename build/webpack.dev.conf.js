@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const utils = require('./utils')
 
 module.exports = {
 	devServer: {
@@ -13,6 +14,9 @@ module.exports = {
 		},
 		host: process.env.HOST,
 		port: process.env.PORT
+	},
+	module: {
+		rules: utils.styleLoaders({ sourceMap: true })
 	},
 	plugins: [
 		new webpack.WatchIgnorePlugin([
