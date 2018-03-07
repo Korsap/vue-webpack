@@ -13,7 +13,7 @@ module.exports ={
 		productionGzipExtension: ['js', 'css']
 	},
 	dev: {
-		assetsRoot: path.join(__dirname, '..', 'src'),
+		assetsRoot: path.join(__dirname, '..', 'dist'),
 		assetsPublicPath: '/',
 		stylePath: 'css/styles.css',
 		env: {

@@ -4,7 +4,7 @@ const config = require('../config')
 
 module.exports = {
 	entry: {
-		app: config.dev.assetsRoot
+		app: path.join(__dirname, '..', 'src')
 	},
 	output: {
 		path: process.env.NODE_ENV === 'production' ? config.prod.assetsRoot : config.dev.assetsRoot,
