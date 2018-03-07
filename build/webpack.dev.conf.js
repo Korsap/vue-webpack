@@ -1,8 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const utils = require('./utils')
+const config = require('../config')
+
+const env = config.dev.env
+const host = config.dev.host
+const port = config.dev.port
 
 module.exports = {
 	devServer: {
@@ -12,13 +18,18 @@ module.exports = {
 			aggregateTimeout: 300,
 			poll: 1000
 		},
-		host: process.env.HOST,
-		port: process.env.PORT
+		host: host,
+		port: port
 	},
 	module: {
 		rules: utils.styleLoaders({ sourceMap: true })
 	},
 	plugins: [
+		new HtmlWebpackPlugin({
+			title: 'Вы все говно',
+			filename: 'index.html',
+			inject: true
+		}),
 		new webpack.WatchIgnorePlugin([
 			path.join(__dirname, '..', 'node_modules')
 		]),
@@ -36,9 +47,7 @@ module.exports = {
 		new webpack.NoEmitOnErrorsPlugin(),
 		new ProgressBarPlugin(),
 		new webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: JSON.stringify('development')
-			}
+			'process.env': env
 		}),
 	]
 }
