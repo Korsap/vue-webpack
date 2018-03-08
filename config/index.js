@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports ={
 	prod: {
-		assetsRoot: path.join(__dirname, '..', 'dist'),
+		assetsRoot: path.join(__dirname, '..', 'docs'),
 		assetsPublicPath: '/',
 		stylePath: 'css/styles.css',
 		env: {
@@ -13,7 +13,7 @@ module.exports ={
 		productionGzipExtension: ['js', 'css']
 	},
 	dev: {
-		assetsRoot: path.join(__dirname, '..', 'dist'),
+		assetsRoot: path.join(__dirname, '..', 'docs'),
 		assetsPublicPath: '/',
 		stylePath: 'css/styles.css',
 		env: {

@@ -1,13 +1,14 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const utils = require('./utils')
 const config = require('../config')
+const merge = require('webpack-merge')
+const baseConf = require('./webpack.base.conf')
 
 const env = config.prod.env
 
-module.exports = {
+module.exports = merge(baseConf, {
 	module: {
 		rules: utils.styleLoaders({
 			sourceMap: true,
@@ -28,7 +29,6 @@ module.exports = {
 				removeAttributeQuotes: true
 			}
 		}),
-		new ProgressBarPlugin(),
 		new webpack.DefinePlugin({
 			'process.env': env
 		}),
@@ -42,4 +42,4 @@ module.exports = {
 			minRatio: 0.8
 		})
 	]
-}
+})

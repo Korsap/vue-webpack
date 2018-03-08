@@ -4,20 +4,24 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --env development",
-    "build": "webpack --env production"
+    "build": "node build/build.js"
   },
   "author": "Andrey Savchenko <korsap@bk.ru>",
   "license": "MIT",
   "devDependencies": {
+    "chalk": "^2.3.2",
     "compression-webpack-plugin": "^1.1.10",
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^3.0.6",
+    "ora": "^2.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^0.20.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "url-loader": "^1.0.1",
     "webpack": "3",
     "webpack-dev-server": "2",
     "webpack-merge": "^4.1.2"

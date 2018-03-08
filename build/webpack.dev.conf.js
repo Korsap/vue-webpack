@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const utils = require('./utils')
 const config = require('../config')
@@ -28,6 +27,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Вы все говно',
 			filename: 'index.html',
+			template: 'index.html',
 			inject: true
 		}),
 		new webpack.WatchIgnorePlugin([
@@ -45,7 +45,6 @@ module.exports = {
 			clearConsole: true
 		}),
 		new webpack.NoEmitOnErrorsPlugin(),
-		new ProgressBarPlugin(),
 		new webpack.DefinePlugin({
 			'process.env': env
 		}),
